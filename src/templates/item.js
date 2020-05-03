@@ -4,6 +4,10 @@ import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components"
+import { Button } from "gatsby-theme-material-ui";
+import Select from '@material-ui/core/Select';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
 
 import Layout from "../components/layout";
 
@@ -82,34 +86,48 @@ class Item extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Heading>{item.frontmatter.title}</Heading>
 
-        <ImgStyled fluid={item.frontmatter.image.childImageSharp.fluid} />
+      <div className="mx-4 md:flex md:mx-64 bg-white rounded-lg shadow-md">
+        <div className="md:flex-shrink-0">
+        <Img className="rounded-lg md:w-56" fluid={item.frontmatter.image.childImageSharp.fluid} />
+        </div>
+        <div className="px-2 mt-6 md:mt-12 md:ml-6">
+        <div className="uppercase tracking-wide text-sm text-indigo-600 font-bold">{item.frontmatter.title}</div>
+        <a href="#" class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline">${this.updatePrice(item.frontmatter.price, item.frontmatter.customField.values)}</a>
+        <p class="mt-2 text-gray-600 mb-6">{item.frontmatter.description}</p>
+        <br/>
+      </div>
+    </div>
 
-        <Price>£{this.updatePrice(item.frontmatter.price, item.frontmatter.customField.values)}</Price>
-        <Description>{item.frontmatter.description}</Description>
-        <Dropdown
+    <div className=" mt-4 md:mx-64 p-4 mb-4 bg-white rounded-lg shadow-xs">
+    <FormControl>
+    <InputLabel htmlFor="lol">Size</InputLabel>
+        <Select
+        className="m-4 "
+          native
           id={item.frontmatter.customField.name}
           onChange={(e) => this.setSelected(e.target.value)}
           value={this.state.selected}>
           {item.frontmatter.customField.values.map((option) => (<DropdownOption key={option.name}>{option.name}</DropdownOption>))}
-        </Dropdown>
-
-        <BuyButton
-          className='snipcart-add-item'
+        </Select>
+        </FormControl>
+        <br/>
+        <Button
+          className="snipcart-add-item"
+          variant="outlined"
           data-item-id={item.frontmatter.id}
           data-item-price={item.frontmatter.price}
           data-item-name={item.frontmatter.title}
           data-item-description={item.frontmatter.description}
           data-item-image={item.frontmatter.image.childImageSharp.fluid.src}
-          data-item-url={"https://merchbox.netlify.app" + item.fields.slug} //REPLACE WITH OWN URL
+          data-item-url={"https://merchbox.netlify.app/" + item.fields.slug} //REPLACE WITH OWN URL
           data-item-custom1-name={item.frontmatter.customField ? item.frontmatter.customField.name : null}
           data-item-custom1-options={this.createString(item.frontmatter.customField.values)}
           data-item-custom1-value={this.state.selected}>
           Add to basket
-        </BuyButton>
-
-      </Layout>
+        </Button>
+      </div>
+    </Layout>
     )
   }
 }

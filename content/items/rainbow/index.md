@@ -1,13 +1,15 @@
 ---
-title: Rainbow buttercream
+title: Omega Co-Axial Master Chronometer 3
 date: 2019-06-19
-id: 5
-price: 2.50
-image: ./image1.jpg
-description: A vanilla cake with rainbow buttercream icing.
+id: 1
+price: 3000
+image: ./image1.png 
+
+description: Self-winding movement with a Co-Axial escapement. Certified Master Chronometer, approved by METAS, resistant to magnetic fields reaching 15,000 gauss. Free sprung-balance with silicon balance spring, automatic winding in both directions. Special luxury finish with rhodium-plated rotor and bridges with Geneva waves in arabesque.
+
 customField: 
     name: Pack Size
-    values: [{name: 'One Cake', priceChange: 0}, {name: 'Pack of 6', priceChange: 9.50}, {name: 'Pack of 12', priceChange: 20.00}]
+    values: [{name: 'Small', priceChange: 80}, {name: 'Medium', priceChange: 120.00}, {name: 'Largw', priceChange: 200.00}]
 ---
 
-This cake will match your pet unicorn nicely.
+Self-winding movement with a Co-Axial escapement. Certified Master Chronometer, approved by METAS, resistant to magnetic fields reaching 15,000 gauss. Free sprung-balance with silicon balance spring, automatic winding in both directions. Special luxury finish with rhodium-plated rotor and bridges with Geneva waves in arabesque.

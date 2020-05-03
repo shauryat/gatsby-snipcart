@@ -66,5 +66,16 @@ module.exports = {
           }
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-postcss`,
+    
+    {
+      resolve: `gatsby-theme-material-ui`,
+      options: {
+        stylesConfig: {
+          // disableAutoprefixing: true,
+          // disableMinification: true
+        },
+      },
+    },
   ],
 }

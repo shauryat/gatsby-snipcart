@@ -1,41 +1,19 @@
 import React, { Component } from "react";
 import styled from "styled-components"
-import { Link } from "gatsby";
+import { Button } from "gatsby-theme-material-ui";
+import { Link } from "gatsby"
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Badge from '@material-ui/core/Badge';
+import './styles.css';
+import Logo from "./logo.png";
 
 import { ShoppingCart } from 'styled-icons/material/ShoppingCart';
 
-const HeaderMinorStyled = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: ${props => props.theme.colors.main};
-    margin: 20px 0;
-    border: 4px solid ${props => props.theme.colors.secondaryAccent};
 
-`
 
-const ShopName = styled.h1`
-    padding: 20px;
-    font-family: Heebo, sans-serif;
-    font-size: 2em;
-    font-weight: 700;
-`
 
-const LinkStyled = styled(Link)`
-    box-shadow: none;
-    text-decoration: none;
-    color: inherit;
-`
-
-const CartSummary = styled.div`
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 10px;
-    font-weight: bold;
-`
 
 class HeaderMinor extends Component {
     state = {
@@ -74,19 +52,27 @@ class HeaderMinor extends Component {
 
     render() {
         return (
-            <HeaderMinorStyled>
-                <ShopName>
-                    <LinkStyled to='/'>
-                        {this.props.shopName}
-                    </LinkStyled>
-                </ShopName>
-                <CartSummary className="snipcart-summary">
-                    <a href="#" className="snipcart-checkout"> <ShoppingCart size='40px' /></a>
-                    <p>{this.state.items} yummy items</p>
-                </CartSummary>
 
-            </HeaderMinorStyled>
-        )
+            <div>
+        <AppBar position="static" color="transparent">
+          <Toolbar>  
+            <Typography variant="h6">
+             <Link to="/">
+             <img src={Logo} className="h-1/2 w-1/2 md:w-1/4"/>
+             </Link>
+            </Typography>
+            <div className="ml-24 lg:ml-auto">
+            <Button color="inherit">
+              <Badge badgeContent={this.state.items} color="secondary">
+              <a href="#" className="snipcart-checkout"> <ShoppingCart size='23px' /> </a>
+              </Badge>
+            </Button>
+           </div>
+          </Toolbar>
+        </AppBar>
+      </div>
+
+        )  
     }
 
 }

@@ -1,44 +1,37 @@
 import React from "react";
-import styled from "styled-components"
-import { Link } from "gatsby";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import WaveBorder from './WaverBorder';
+import Logo from "./logo.png";
+import DotBg from "./bg.jpg";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 
-const HeaderMainStyled = styled.div`
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 20px;
-`
-
-const ShopName = styled.h1`
-    background: ${props => props.theme.colors.main};
-    padding: 20px;
-    width: 50%;
-    text-align: center;
-    font-family: Heebo, sans-serif;
-    border: 4px solid ${props => props.theme.colors.secondaryAccent};
-    font-size: 2.5em;
-    font-weight: 900;
-    @media (max-width: 600px) {
-        width: 100%;
-      }
-`
-
-const LinkStyled = styled(Link)`
-    box-shadow: none;
-    text-decoration: none;
-    color: inherit;
-`
 
 const headerMain = (props) => {
     return (
-        <HeaderMainStyled>
-            <ShopName>
-                <LinkStyled to='/'>
-                    {props.shopName}
-                </LinkStyled>
-            </ShopName>
-        </HeaderMainStyled>
+
+      
+        
+          <div className="container">
+             <img src={Logo} className="h-1/2 w-1/2 md:w-1/4 mx-auto mt-24 mb-2"/>
+             <Typography variant="subtitle2" align="center" color="textSecondary">  Lorem ipsum </Typography>
+          <hr className="w-1/3 mx-auto my-2"/>
+          <Typography variant="subtitle1" align="center" color="textSecondary"> Products Also Available on Amazon.in </Typography>
+          <hr className="w-1/2 mx-auto my-2"/>
+          <div className="mt-8 -mb-4">
+          <Typography variant="h5" align="center" color="textPrimary" display="block"> Products Available </Typography>
+         
+          </div>
+        </div>
+
+      
+
+     
+
+                   
+               
     )
 }
 

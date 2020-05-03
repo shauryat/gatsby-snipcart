@@ -3,6 +3,15 @@ import styled from "styled-components"
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+
+import Typography from '@material-ui/core/Typography';
+
+import { Button, CardActionArea } from "gatsby-theme-material-ui";
+
 
 const ItemThumbnailStyled = styled.div`
     width: 350px;
@@ -43,10 +52,20 @@ const LinkStyled = styled(Link)`
     align-items: center;
     justify-content: center;
 `
+const CustomCard= styled(Card)`
+    min-width: 22rem;
+
+    @media (max-width: 930px) {
+        max-width: 200px;
+      }
+    
+    
+`
 
 const ImgStyled = styled(Img)`
     width: 100%;
     height: 350px;
+    
 
     @media (max-width: 930px) {
         height: 250px;
@@ -59,13 +78,33 @@ const Price = styled.p`
 
 const itemThumbnail = (props) => {
     return (
-        <ItemThumbnailStyled>
-            <LinkStyled to={props.link}>
-                <ImgStyled fluid={props.image} />
-                <Heading>{props.heading}</Heading>
-            </LinkStyled>
-            <Price>£{props.price.toFixed(2)}</Price>
-        </ItemThumbnailStyled >
+
+        // props.price.toFixed 2
+        //props.image
+
+    <div className="md:flex-row">
+    <Link to={props.link}>
+        <CustomCard className="m-2" variant="outlined">
+        <CardActionArea>
+        <div className="md:flex-shrink-0 bg-gray-200 h-64">
+         <Img fluid={props.image} className="rounded h-56 w-40 mx-auto"/>
+         </div>
+          <CardContent>
+            <Typography  variant="body1" color="textPrimary" align="left">
+              {props.heading}
+            </Typography>
+            <Typography variant="subtitle2" color="textSecondary" align="left">
+            ${props.price.toFixed(2)}
+          </Typography>
+          </CardContent>
+        </CardActionArea>
+      </CustomCard>
+      </Link>
+    </div>
+       
+
+        
+
     )
 }
 
