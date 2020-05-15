@@ -57,13 +57,12 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+
     {
-      resolve: 'gatsby-plugin-snipcart',
+      resolve: 'gatsby-plugin-snipcartv3',
       options: {
-        //replace with own Snipcart API key
-        apiKey: 'YjY2NTQxOGYtYWQxYS00ODI4LWI1ODQtYTk3ZTI3ZDgwMTI5NjM3MjM2OTE4MjEzMzU4Mzg5',
-        autopop: true,
-          }
+        apiKey: 'YjY2NTQxOGYtYWQxYS00ODI4LWI1ODQtYTk3ZTI3ZDgwMTI5NjM3MjM2OTE4MjEzMzU4Mzg5'
+      }
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-postcss`,
