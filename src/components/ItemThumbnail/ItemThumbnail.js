@@ -85,7 +85,6 @@ const itemThumbnail = (props) => {
     <div className="md:flex-row">
     <Link to={props.link}>
         <CustomCard className="m-2" variant="outlined">
-        <CardActionArea>
         <div className="md:flex-shrink-0 bg-gray-200 h-64">
          <Img fluid={props.image} className="rounded h-56 w-40 mx-auto"/>
          </div>
@@ -97,7 +96,6 @@ const itemThumbnail = (props) => {
             ${props.price.toFixed(2)}
           </Typography>
           </CardContent>
-        </CardActionArea>
       </CustomCard>
       </Link>
     </div>
