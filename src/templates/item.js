@@ -89,17 +89,17 @@ class Item extends React.Component {
 
       <div className="mx-4 md:flex md:mx-64 bg-white rounded-lg shadow-md">
         <div className="md:flex-shrink-0">
-        <Img className="rounded-lg md:w-56" fluid={item.frontmatter.image.childImageSharp.fluid} />
+        <Img className="md:w-56 bg-gray-200" fluid={item.frontmatter.image.childImageSharp.fluid} />
         </div>
         <div className="px-2 mt-6 md:mt-12 md:ml-6">
-        <div className="uppercase tracking-wide text-lg text-indigo-600 font-bold">{item.frontmatter.title}</div>
+        <div className="uppercase tracking-wide text-lg text-gray-600 font-bold">{item.frontmatter.title}</div>
         <a href="#" class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline">₹{this.updatePrice(item.frontmatter.price, item.frontmatter.customField.values)}</a>
         <p class="mt-2 text-gray-600 mb-6">{item.frontmatter.description}</p>
         <br/>
       </div>
     </div>
 
-    <div className="m-4 md:mx-64 p-4 bg-white rounded-lg shadow-xs">
+    <div className="m-4 md:mx-64 p-4 bg-gray-200 rounded-lg shadow-xs">
     <FormControl>
     <InputLabel htmlFor="lol">Size</InputLabel>
         <Select

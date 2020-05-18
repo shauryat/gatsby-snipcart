@@ -14,18 +14,23 @@ const headerMain = (props) => {
 
       
         
-          <div className="container">
+          <div className="container bg-gray-200 -mt-24">
+              <br/>
              <img src={Logo} className="h-1/2 w-1/2 md:w-1/4 mx-auto mt-24 mb-2"/>
              <Typography variant="subtitle2" align="center" color="textSecondary">  Lorem ipsum </Typography>
           <hr className="w-1/3 mx-auto my-2"/>
           <Typography variant="subtitle1" align="center" color="textSecondary"> Products Also Available on Amazon.in </Typography>
           <hr className="w-1/2 mx-auto my-2"/>
           <div className="mt-8 -mb-4">
-          <Typography variant="h5" align="center" color="textPrimary" display="block"> Products Available </Typography>
-         
+          <Typography variant="h5" align="center" color="textPrimary" display="block"> Products Available </Typography>  
+          <br/>
+          <WaveBorder
+        upperColor="#EDF2F7"
+        lowerColor="#fafafa"
+        animationNegativeDelay={4}
+      />
           </div>
         </div>
-
       
 
      
